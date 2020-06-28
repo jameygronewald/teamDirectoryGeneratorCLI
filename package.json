@@ -1,0 +1,29 @@
+{
+  "name": "teamdirectorygeneratorcli",
+  "version": "1.0.0",
+  "description": "CLI for dynamically generating a web page that displays employee information for a software engineering team",
+  "main": "app.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "dependencies": {
+    "inquirer": "^6.3.1"
+  },
+  "devDependencies": {
+    "jest": "^24.8.0"
+  },
+  "scripts": {
+    "test": "jest --verbose test/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jameygronewald/teamDirectoryGeneratorCLI.git"
+  },
+  "author": "Jamey Gronewald",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jameygronewald/teamDirectoryGeneratorCLI/issues"
+  },
+  "homepage": "https://github.com/jameygronewald/teamDirectoryGeneratorCLI#readme"
+}
