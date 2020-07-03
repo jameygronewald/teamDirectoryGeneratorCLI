@@ -29,22 +29,28 @@ const askUser = () => {
                 inquirer.prompt(questions.managerQuestions).then((data) => {
                     let manager = new Manager(data.managerName, data.managerId, data.managerEmail, data.managerOfficeNumber);
                     employees.push(manager);
+                    console.log(employees);
+                    askUser();
                 });
                 break;
             case 'engineer':
                 inquirer.prompt(questions.engineerQuestions).then((data) => {
                     let engineer = new Engineer(data.engineerName, data.engineerId, data.engineerEmail, data.engineerGithub);
                     employees.push(engineer);
+                    console.log(employees);
+                    askUser();
                 });
                 break;
             case 'intern':
                 inquirer.prompt(questions.internQuestions).then((data) => {
                     let intern = new Intern(data.internName, data.internId, data.internEmail, data.internSchool);
                     employees.push(intern);
+                    console.log(employees);
+                    askUser();
                 });
                 break;
         };
-        outputHtml(outputPath, employees);
+        // outputHtml(outputPath, employees);
     });
 };
 askUser();
