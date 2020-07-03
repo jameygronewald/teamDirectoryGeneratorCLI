@@ -67,8 +67,8 @@ const askUser = () => {
             },
         ]).then((data) => {
             let manager = new Manager(data.managerName, data.managerId, data.managerEmail, data.managerOfficeNumber);
-            let engineer = new Manager(data.engineerName, data.engineerId, data.engineerEmail, data.engineerGithub);
-            let intern = new Manager(data.internName, data.internId, data.internEmail, data.internSchool);
+            let engineer = new Engineer(data.engineerName, data.engineerId, data.engineerEmail, data.engineerGithub);
+            let intern = new Intern(data.internName, data.internId, data.internEmail, data.internSchool);
             employees.push(manager);
             employees.push(engineer);
             employees.push(intern);
