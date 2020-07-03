@@ -1,0 +1,22 @@
+body {
+    font-family: 'Oswald', sans-serif;
+    color: rgb(22, 30, 65);
+    background-image: url('./backgroundImage.png')
+}
+
+.jumbotron {
+    background-color: rgb(0, 160, 80);
+    padding: 35px;
+}
+
+.header {
+    font-size: 80px;
+}
+
+.card {
+    background-color: rgba(99, 98, 98, 0.3);
+}
+
+.card-body {
+    background-color: rgb(0, 160, 80);
+}
