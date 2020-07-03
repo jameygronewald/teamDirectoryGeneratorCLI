@@ -9,10 +9,6 @@ const render = require("./lib/htmlRenderer");
 
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
-
-// Write code to use inquirer to gather information about the development team members,
-// and to create objects for each team member (using the correct classes as blueprints!)
-
 const employees = [];
 
 const outputHtml = (path, data) => {
@@ -23,34 +19,42 @@ const outputHtml = (path, data) => {
 };
 
 const askUser = () => {
-    inquirer.prompt(questions.employeeTypeQuestion).then((data) => {
-        switch(data.type) {
+    inquirer.prompt(questions.employeeRoleQuestion).then((data) => {
+        switch(data.role) {
             case 'manager':
                 inquirer.prompt(questions.managerQuestions).then((data) => {
                     let manager = new Manager(data.managerName, data.managerId, data.managerEmail, data.managerOfficeNumber);
                     employees.push(manager);
-                    console.log(employees);
-                    askUser();
+                    if (data.confirm ==='yes') {
+                        askUser();
+                    } else {
+                        outputHtml(outputPath, employees);
+                    }
                 });
                 break;
             case 'engineer':
                 inquirer.prompt(questions.engineerQuestions).then((data) => {
                     let engineer = new Engineer(data.engineerName, data.engineerId, data.engineerEmail, data.engineerGithub);
                     employees.push(engineer);
-                    console.log(employees);
-                    askUser();
+                    if (data.confirm ==='yes') {
+                        askUser();
+                    } else {
+                        outputHtml(outputPath, employees);
+                    }
                 });
                 break;
             case 'intern':
                 inquirer.prompt(questions.internQuestions).then((data) => {
                     let intern = new Intern(data.internName, data.internId, data.internEmail, data.internSchool);
                     employees.push(intern);
-                    console.log(employees);
-                    askUser();
+                    if (data.confirm ==='yes') {
+                        askUser();
+                    } else {
+                        outputHtml(outputPath, employees);
+                    }
                 });
                 break;
         };
-        // outputHtml(outputPath, employees);
     });
 };
 askUser();
