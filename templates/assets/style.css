@@ -20,3 +20,7 @@ body {
 .card-body {
     background-color: rgb(0, 160, 80);
 }
+
+i {
+    color: rgb(138, 0, 0);
+}
