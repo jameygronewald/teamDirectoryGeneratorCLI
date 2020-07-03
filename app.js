@@ -33,6 +33,8 @@ const internQuestions = [
     'What school did the intern attend?'
 ];
 
+const employees = [];
+
 const askUser = () => {
     inquirer
         .prompt([
@@ -56,10 +58,15 @@ const askUser = () => {
                 message: managerQuestions[3],
                 name: 'managerOfficeNumber'
             },
-        ]).then((employeeData) => {
-            console.log(employeeData);
-        })
-}
+        ]).then((data) => {
+            console.log(data);
+            let manager = new Manager(data.managerName, data.managerId, data.managerEmail, data.managerOfficeNumber);
+            console.log(manager);
+            employees.push(manager);
+            console.log(employees);
+        });
+    render(employees);
+};
 askUser();
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
