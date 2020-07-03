@@ -35,6 +35,13 @@ const internQuestions = [
 
 const employees = [];
 
+const outputHtml = (path, data) => {
+    fs.writeFile(path, render(data), (error) => {
+        if (error) throw error;
+        else (console.log('Success!'));
+    });
+};
+
 const askUser = () => {
     inquirer
         .prompt([
@@ -59,13 +66,15 @@ const askUser = () => {
                 name: 'managerOfficeNumber'
             },
         ]).then((data) => {
-            console.log(data);
             let manager = new Manager(data.managerName, data.managerId, data.managerEmail, data.managerOfficeNumber);
-            console.log(manager);
+            let engineer = new Engineer(data.engineerName, data.engineerId, data.engineerEmail, data.engineerGithub);
+            let intern = new Intern(data.internName, data.internId, data.internEmail, data.internSchool);
             employees.push(manager);
+            employees.push(engineer);
+            employees.push(intern);
             console.log(employees);
+            outputHtml(outputPath, employees);
         });
-    render(employees);
 };
 askUser();
 // After the user has input all employees desired, call the `render` function (required
