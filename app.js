@@ -29,7 +29,7 @@ const askUser = () => {
                     } else {
                         let manager = new Manager(data.managerName, data.managerId, data.managerEmail, data.managerOfficeNumber);
                         employees.push(manager);
-                        if (data.confirm ==='yes') {
+                        if (data.confirm) {
                             askUser();
                         } else {
                             outputHtml(outputPath, employees);
@@ -45,7 +45,7 @@ const askUser = () => {
                     } else {
                         let engineer = new Engineer(data.engineerName, data.engineerId, data.engineerEmail, data.engineerGithub);
                         employees.push(engineer);
-                        if (data.confirm ==='yes') {
+                        if (data.confirm) {
                             askUser();
                         } else {
                             outputHtml(outputPath, employees);
@@ -61,7 +61,7 @@ const askUser = () => {
                     } else {
                         let intern = new Intern(data.internName, data.internId, data.internEmail, data.internSchool);
                         employees.push(intern);
-                        if (data.confirm ==='yes') {
+                        if (data.confirm) {
                             askUser();
                         } else {
                             outputHtml(outputPath, employees);
