@@ -13,6 +13,11 @@ body {
     font-size: 80px;
 }
 
+.cardContainer {
+    margin: 0;
+    width: 100%;
+}
+
 .card {
     background-color: rgba(99, 98, 98, 0.3);
 }
