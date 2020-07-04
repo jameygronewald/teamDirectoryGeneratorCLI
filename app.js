@@ -23,34 +23,49 @@ const askUser = () => {
         switch(data.role) {
             case 'manager':
                 inquirer.prompt(questions.managerQuestions).then((data) => {
-                    let manager = new Manager(data.managerName, data.managerId, data.managerEmail, data.managerOfficeNumber);
-                    employees.push(manager);
-                    if (data.confirm ==='yes') {
-                        askUser();
+                    if (data.managerName === '' || data.managerId === '' || data.managerEmail === '' || data.managerOfficeNumber === '') {
+                        console.log('*****YOU MUST ENTER A VALUE FOR EACH QUESTION; PLEASE BEGIN AGAIN.*****');
+                        askUser();                        
                     } else {
-                        outputHtml(outputPath, employees);
+                        let manager = new Manager(data.managerName, data.managerId, data.managerEmail, data.managerOfficeNumber);
+                        employees.push(manager);
+                        if (data.confirm ==='yes') {
+                            askUser();
+                        } else {
+                            outputHtml(outputPath, employees);
+                        }
                     }
                 });
                 break;
             case 'engineer':
                 inquirer.prompt(questions.engineerQuestions).then((data) => {
-                    let engineer = new Engineer(data.engineerName, data.engineerId, data.engineerEmail, data.engineerGithub);
-                    employees.push(engineer);
-                    if (data.confirm ==='yes') {
-                        askUser();
+                    if (data.engineerName === '' || data.engineerId === '' || data.engineerEmail === '' || data.engineerGithub === '') {
+                        console.log('*****YOU MUST ENTER A VALUE FOR EACH QUESTION; PLEASE BEGIN AGAIN.*****');
+                        askUser(); 
                     } else {
-                        outputHtml(outputPath, employees);
+                        let engineer = new Engineer(data.engineerName, data.engineerId, data.engineerEmail, data.engineerGithub);
+                        employees.push(engineer);
+                        if (data.confirm ==='yes') {
+                            askUser();
+                        } else {
+                            outputHtml(outputPath, employees);
+                        }
                     }
                 });
                 break;
             case 'intern':
                 inquirer.prompt(questions.internQuestions).then((data) => {
-                    let intern = new Intern(data.internName, data.internId, data.internEmail, data.internSchool);
-                    employees.push(intern);
-                    if (data.confirm ==='yes') {
-                        askUser();
+                    if (data.internName === '' || data.internId === '' || data.internEmail === '' || data.internOfficeNumber === '') {
+                        console.log('*****YOU MUST ENTER A VALUE FOR EACH QUESTION; PLEASE BEGIN AGAIN.*****');
+                        askUser(); 
                     } else {
-                        outputHtml(outputPath, employees);
+                        let intern = new Intern(data.internName, data.internId, data.internEmail, data.internSchool);
+                        employees.push(intern);
+                        if (data.confirm ==='yes') {
+                            askUser();
+                        } else {
+                            outputHtml(outputPath, employees);
+                        }
                     }
                 });
                 break;
