@@ -27,9 +27,9 @@ CLI for dynamically generating a web page that displays employee information for
   [Video Demo](https://drive.google.com/file/d/1kPJ5nfVlhuckDRatswYmZPDRreVhWIQS/view)
 
   ### Screenshots
-  * [App in command line](../templates/assets/demoImages/appCLI.png)
-  * [Generated Team Directory Wide Viewport](../templates/assets/demoImages/sampleTeamDirectoryWideViewport.png)
-  * [Generated Team Directory Mobile](../templates/assets/demoImages/sampleTeamDirectoryMobile.png)
+  ![App in command line](./templates/assets/demoImages/appCLI.png)
+  ![Generated Team Directory Wide Viewport](./templates/assets/demoImages/sampleTeamDirectoryWide.png)
+  ![Generated Team Directory Mobile](./templates/assets/demoImages/sampleTeamDirectoryMobile.png)
 
   ## Contributing
   I am the sole contributor on this project.
